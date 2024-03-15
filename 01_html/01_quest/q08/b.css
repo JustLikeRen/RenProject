@@ -1,0 +1,16 @@
+table {
+    /* border: 1px solid black; */
+
+    border-width : 1px;
+    border-style: dashed;
+    border-color: black
+}
+
+tr,
+td {
+    border-width : 4px;
+    border-style: solid;
+    border-color: orange;
+
+    padding: 14px;
+}

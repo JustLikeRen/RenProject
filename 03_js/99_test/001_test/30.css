@@ -1,0 +1,19 @@
+#rsp_result {
+    width: 300px;
+    height: 100px;
+    font-size: 18px;
+    background-color: pink;
+}
+#screen{
+    display: flex;
+    flex-direction: row;
+    flex-basis: 1fr 1fr 1fr;
+    height: 400px;
+}
+#playerrsp{
+}
+#vs{
+    width: 200px;    
+}
+#comrsp{
+}

@@ -1,0 +1,16 @@
+package com.peisia.dto;
+
+import lombok.Data;
+
+@Data
+public class RiotDto {
+	String leagueId;
+	String queueType;
+	String tier;
+	String summonerId;
+	String summonerName;
+	int leaguePoints;
+	int wins;
+	int losses;
+	String name;
+}

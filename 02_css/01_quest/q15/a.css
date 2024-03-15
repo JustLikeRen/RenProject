@@ -1,0 +1,43 @@
+#box {
+    display: flex;
+    flex-direction: row;
+    /* flex-direction: column; */
+
+    /* justify-content: center; */
+
+    width: 1000px;
+    height: 1000px;
+
+    /* background-color: pink; */
+}
+
+#a{
+    background-color: red;
+    flex-basis: 10%;
+    /* height: 1000px; */
+    
+}
+#b{
+    background-color: orange;
+    flex-basis: 30%;
+    /* height: 1000px; */
+    
+}
+#c{
+    background-color: yellow;
+    flex-basis: 20%;
+    /* height: 1000px; */
+    
+}
+#d{
+    background-color: green;
+    flex-basis: 20%;
+    /* height: 1000px; */
+    
+}
+#e{
+    background-color: blue;
+    flex-basis: 20%;
+    /* height: 1000px; */
+    
+}

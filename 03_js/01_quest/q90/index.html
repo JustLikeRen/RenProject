@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="a.js"> </script>
+    <title>DOM</title>
+</head>
+
+<body>
+    <div id="page"> <!-- // id	pw	를 입력 받는 폼을 만들기		 -->
+        <form>
+        <div id="login_box">
+            <div>
+                <input id="id">
+                <input type="password" id="pw" minlength="6" maxlength="15" required placeholder="pw(6자리 이상, 15자리 이하)" pattern="^(?=.*[!@#$%^&*])(?=.*[A-Z])[a-zA-Z0-9!@#$%^&*]{6,15}$">
+                <input type="button" onclick="login()" value="로그인">
+                <a href="reg_member.html"> <input type="button" value="회원가입"> </a>
+                <div id="R">
+                </div>
+            </div>
+        </div>
+        
+    </form><div id="clock"></div>
+</div>
+</body>
+
+</html>

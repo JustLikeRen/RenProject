@@ -1,0 +1,24 @@
+* { color: black; background-color: gray; }
+h1 { text-align: center; }
+.ca { color: green; }
+#ia { color: yellow; }
+p, b { color: blue; }
+
+img {
+    width : 300px;
+    height: 500px;
+}
+
+div { 
+    background-color: pink;
+}
+
+b {
+    background-color: aqua;
+}
+li {
+    background-color: azure;
+}
+ol {
+    background-color: violet;
+}

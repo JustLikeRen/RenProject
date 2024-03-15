@@ -1,0 +1,44 @@
+
+#page{
+    display: flex;
+    background-color: pink;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh; /*보고있는 화면의 100%*/
+}
+#login_box{
+    display: flex;
+    justify-content: center;
+    border: 2px solid blue ; /* 선 굵기 종류 색깔 */
+    width: 200px;
+    height: 150px;
+    background-color: bisque; 
+    border-radius: 10px; /* 꼭짓점을 px만큼 둥글게*/ 
+    text-align: center;
+    align-items: center;
+    box-shadow: 5px 5px 5px;
+    
+}
+#R{
+    display: flex;
+    width:140px;
+    height:50px;
+    background-color: aqua;
+    margin: auto;
+    visibility: hidden;
+}
+
+#clock{
+    position: fixed;
+    width:280px;
+    height:30px;
+    background-color: black;
+    color: #FFF;
+    text-align: center;
+    left: 20px;
+    top: 20px;
+}
+/* #inbox{
+    
+    } */

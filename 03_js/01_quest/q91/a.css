@@ -1,0 +1,10 @@
+img {
+    width : 300px ;
+    display: block;
+}
+#a{
+    width: 400px;
+    height:200px;
+    background-color: pink;
+}
+

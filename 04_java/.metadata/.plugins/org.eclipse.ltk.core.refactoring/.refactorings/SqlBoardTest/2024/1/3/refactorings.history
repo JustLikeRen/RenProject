@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 4 packages to &apos;test/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;SqlBoardTest&apos;&#x0D;&#x0A;- Destination element: &apos;test/src/main/java&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     SqlBoardTest/src/com.peisia.util&#x0D;&#x0A;     SqlBoardTest/src/com.peisia.mysqlconsoleboard&#x0D;&#x0A;     SqlBoardTest/src/com.peisia.member&#x0D;&#x0A;     SqlBoardTest/src/com.peisia.mysqltest" description="Copy packages" destination="=test/src\/main\/java" element1="/src&lt;com.peisia.util" element2="/src&lt;com.peisia.mysqlconsoleboard" element3="/src&lt;com.peisia.member" element4="/src&lt;com.peisia.mysqltest" flags="589830" fragments="4" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1705628051324" version="1.0"/>
+</session>

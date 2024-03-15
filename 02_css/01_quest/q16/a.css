@@ -1,0 +1,25 @@
+#box {
+    display: flex;
+    flex-direction: row;
+    /* flex-direction: column; */
+
+    justify-content: center;
+
+    width: 1000px;
+    height: 1000px;
+
+    background-color: pink;
+}
+
+#a{
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    
+}
+#b{
+    background-color: orange;
+    width: 100px;
+    height: 100px;
+    
+}

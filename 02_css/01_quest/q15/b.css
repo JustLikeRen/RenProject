@@ -1,0 +1,38 @@
+#x{
+    background-color: burlywood;
+    display: flex;
+    /* flex-direction: column; */
+    flex-direction: row;
+    align-items: center;
+    /* 부모안의 자식을 위아래 정렬을 원할때 */
+    text-align: center;
+    /* 자식들안의 글씨를 옮길때 */
+    justify-content: center;
+    /* 자식들을 옮길때 */
+    height: 500px;
+}
+
+.z{
+    width:200px;
+    height:100px;
+}
+
+.zz{
+    margin:20px;
+}
+
+#a{
+    background-color: red;
+}
+#b{
+    background-color: orange;
+}
+#c{
+    background-color: yellow;
+}
+#d{
+    background-color: green;
+}
+#e{
+    background-color: blue;
+}
