@@ -1,0 +1,15 @@
+spring:
+  mvc:
+    static-path-pattern: /static/**
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/memo
+    username: root
+    password: root
+  servlet:
+    multipart:
+      max-file-size: 100MB # 단일 파일 업로드에 대한 최대 허용 크기 설정
+      max-request-size: 100MB # 단일 요청에 대한 모든 파일의 최대 허용 크기 설정
