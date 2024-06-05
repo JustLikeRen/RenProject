@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.peisia.mapper.TestMapper">
+	
+	<select id="getList" resultType="com.peisia.dto.TestDto">
+		SELECT * from tbl_guest limit #{limitIndex},5
+	</select>
+	
+	<select id="read" resultType="com.peisia.dto.TestDto">
+		SELECT * from tbl_guest where bno = #{bno}
+	</select>
+	
+	<select id="login" resultType="int"> 
+		Select count(*) as count from member_b where id=#{id} and pw=#{pw}
+	</select>
+	
+	<delete id="del">
+		delete from tbl_guest where bno = #{bno}
+	</delete>	
+	
+	<insert id="write">
+		insert into tbl_guest (btext) values (#{btext})
+	</insert>	
+	
+	<update id="modify">
+		update tbl_guest set btext=#{btext} where bno=#{bno}
+	</update>
+	
+	<select id="search" resultType="com.peisia.dto.TestDto">
+		SELECT * from tbl_guest where btext LIKE CONCAT('%', #{word}, '%') limit #{limitIndex},5 
+	</select>
+	
+	<select id="getListCount" resultType="int">
+		SELECT count(*) from tbl_guest where btext LIKE CONCAT('%', #{word}, '%') 
+	</select>
+	
+	<insert id="member">
+		insert into member_b (id, pw) values (#{id}, #{pw})
+	</insert>	
+</mapper>
+
