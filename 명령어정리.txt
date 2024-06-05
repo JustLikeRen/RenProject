@@ -1,0 +1,205 @@
+처음 class 를 만들었을때 Main을 치고 컨트롤+스페이스로 public static void main(String[] args) {}를 출력
+
+sysout 치고 컨트롤+스페이스 하면 System.out.println(); 이 자동 출력됨
+
+int r = (int)(Math.random()*6+1); // 랜덤값 뽑기
+
+Scanner sc = new Scanner(System.in);
+String cmd = sc.next(); // string cmd 선언 (var cmd 같은것) cmd= 직접 입력하는 부분
+
+alt + shift + a 블럭 편집모드
+
+print 좌우로 찍기 println 위아래로 (행바꿈) 
+
+오버로딩할때 주의점 3개짜리 할땐 3개짜리를 하면안됌
+
+int add(int a, int, b){
+ int sum = a+b;   //a+b 를하고싶을때
+  return sum;
+}
+
+함수 선언 안에 함수 선언을 하는것은 안됌
+
+static 함수를 선언하면 객체를 만들지 않고도 바로 사용 가능 
+
+package com.peisia.util.game;
+
+public class Dice {
+	int n;	// 멤버 변수를 추가 못하거나 하진 않음.
+	
+	/* 
+	 * 주사위 굴리는 함수
+	 * 
+	 * static 키워드 위치는
+	 * static public 또는 public static 둘다 됨.
+	 * 
+	 * static 함수를 만들면 해당 클래스.. 여기서는 Dice
+	 * 클래스를 new 해서 객체 생성하지 않아도
+	 * Dice.roll(100) << 이런식으로 함수 실행이 가능해짐.
+	 * 
+	 * */
+	static public int roll(int n) {
+		int r = (int)(Math.random()*n+1);
+		return r;
+	}
+	
+	//일반 함수를 멤버 함수로 못 만드는건 아님.
+	//둘다 섞여 있어도 됨.
+	//단, 일반 함수는 객체를 생성해야만 사용 가능함.
+	void x() {
+		
+	}
+}
+
+ArraryList<String>xx =new Array<String>();  // String 으로 되어있는 리스트를 만들겠다.
+
+ex) ["고양이","개"]
+
+xx.add ("고양이");
+xx.add ("개");
+
+ -상속-
+class 이름 뒤에 extends 상위 class 를 쓰면 
+상위class의 변수를 물려받아 사용가능
+
+상위 class에게는 필요없는 변수를 하위 class 에서는 직접 선언하여 사용
+
+ex) 상위 class : string name;, int age
+	하위 class : (상속받아사용) + int hp + int attack 이런식
+
+자바 메모리 
+세가지 공간이 있음
+클래스영역	스택영역			힙영역
+static 		변수들이 저장됨		실제로 저장되는 가장 큰 집같은존재
+상수		명함같이 수치들만		스택영역에서 적혀있는 수치들이 이곳에서 꺼내씀
+메서드		
+
+
+public String name;
+
+public Product(String name, int yy)
+
+	this.name = name;
+	name = yy;
+this를 쓴건 public Product 안에 있는 name이 아니라 public String name의 name 이라고 명시하기 위함
+
+
+자식이 형변환을 할때는 자동으로 강제형변환을 해주는데
+역으로 부모가 자식으로 형변환 할때는 강제형변환으로 써주지 않으면 성립하지않음
+
+그리고 형변환할때 int > long 으로 작은것 > 큰것 으로의 형변환은 잘이루어지지만
+반대로 long > int 의 큰것 > 작은것으로의 형변환은 에러가 일어남
+
+Date now = new Date();
+SimpleDateFormat sdf = new SimepleDateFormat("yyyy년 mm월 dd일 hh시 mm분 ss초");
+String strNow = now.toString();
+system.out.println(strNow);
+Stinrg strNow1 = sdf.format(now);
+system.out.println(strNow1);
+
+public class Main {
+	public static void main(String[]args) {
+		Calendar n = Calendar.getInstance(); // << 싱글톤
+		int year = n.get(Calendar.YEAR);
+		int month = n.get(Calendar.MONTH) + 1 ;
+		int day = n.get(Calendar.DAY_OF_MONTH);
+		
+		int week = n.get(Calendar.DAY_OF_WEEK);
+		String strWeek = null;
+		switch(week) {
+		case Calendar.MONDAY:
+			strWeek = "월";
+			break;
+		case Calendar.TUESDAY:
+			strWeek = "화";
+			break;
+		case Calendar.WEDNESDAY:
+			strWeek = "수";
+			break;
+		case Calendar.THURSDAY:
+			strWeek = "목";
+			break;
+		case Calendar.FRIDAY:
+			strWeek = "금";
+			break;
+		case Calendar.SATURDAY:
+			strWeek = "토";
+			break;
+		default:
+			strWeek = "일";
+		}
+		
+		int amPm = n.get(Calendar.AM_PM);
+		String strAmPm = null;
+		if(amPm == Calendar.AM) {
+			strAmPm = "오전";
+		} else {
+			strAmPm = "오후";
+		}
+		
+		int hour = n.get(Calendar.HOUR);
+		int minute = n.get(Calendar.MINUTE);
+		int second = n.get(Calendar.SECOND);
+		
+		System.out.print(year + "년 ");
+		System.out.print(month + "월 ");
+		System.out.println(day + "일 ");
+		System.out.print(strWeek+"요일 ");
+		System.out.println(strAmPm + " ");
+		System.out.print(hour + "시 ");
+		System.out.print(minute + "분 ");
+		System.out.println(second + "초 ");
+		
+	}
+}
+
+**싱글톤**
+싱글톤이란 전체 프로그램에서 단하나의 객체만 만들도록 보장해야하는 경우에 단하나만 생성된 객체를 싱글톤이라고 한다.
+
+캘린더 같은 내장 클래스를 불러올때 겹치면 안되니까 보편적으로는 내장 클래스를 불러올때 사용함.
+
+(2진수)
+2 100 
+2 50 0
+2 25 0
+2 12 1
+2 6  0
+2 3  0
+2 1  1
+ 0
+
+result set 이란 sql 에서 불러온 객체를 하나씩 선언하고 초기화하는 구조로 사용됨
+
+result.next() 함수를 실행하게 되면 하나씩 선언하고 초기화되는 과정을 반복하는데 선언하고 초기화 할때까지는 true 값을 반환하나
+table 안에 있는 객체들을 전부 선언하고 초기화 하게되어서 아무것도 선언할게 없게 되었을 경우 false 값이 되어 실행이 끝나게 됨
+
+자바 게시판 만든것 쿼리쪽 수정해야함
+jsp 연동할때 새로 정리해보기
+
+**자바빈 
+
+자바빈 클래스를 생성하여 멤버변수 하나당 게터 함수 세터 함수를 각각 1개씩 만들어 줘야함
+함수이름은 get+해당멤버변수명 //낙타 표기법으로 멤버변수의 첫자는 대문자로 써야함 
+set또한 똑같이
+
+//게터세터 쉽게 만드는법
+코드 에디터 창에서 마우스 우클릭-팝업에서 소스
+-generate getters and setters-멤버변수들체크해주기-generate 버튼 클릭
+( alt + shift + s 하면  generate getters and setters 팝업이 바로 뜸 )
+
+jsp 에서 개체 생성 할때
+<!-- id = 클래스 변수명 class = 클래스경로 scope = 객체 유효 범위 지정(생략 시 디폴트값은 page 임)  -->
+<jsp:useBean id="..." class="..." scope="..." /> 
+//이런식으로 ex)
+<jsp:useBean id="test_bean" class="com.peisia.hello.Bean" scope="page" />
+
+빈에 값 저장할땐 <jsp:setProperty name="..." property="..." value="..." /> 이런식으로
+ex)
+<jsp:setProperty name="test_bean" property="name" value="cat" />
+<jsp:setProperty name="test_bean" property="number" value="1000" />
+
+name 속성에는 위에서 id에 선언한 값을 넣음 즉 클래스 변수명을 넣으면됨 <<이 객체의 변수를 쓰겠다
+property 에는 해당 클래스의 멤버변수를 넣기 해당 클래스 안의 name 이라던지 number라던지 그런 멤버변수
+value 에는 값을 넣어줌 (표시해줄 실제값)
+
+리엑트에서 데이터 바인딩은 { }
