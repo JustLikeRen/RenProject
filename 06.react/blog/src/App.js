@@ -98,7 +98,7 @@ function App() {
     </div>
   );
 }
-
+//매개변수로 props(상속이랑같음) Modal안에 상속할거 변수명 정해주고 스테이트를 넣으면 사용가능
 function Modal(props){
 
   return (
