@@ -82,7 +82,7 @@ function App() {
             return <div>안녕</div>
           })
         } */}
-     
+      {/* onChange 는 input 이벤트들중 하나고 지금입력한 값을 불러올때 사용 */}
       <input onChange={(e)=>{입력값변경(e.target.value);
       }}/>
       <button onClick={()=>{

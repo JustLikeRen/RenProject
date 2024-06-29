@@ -17,13 +17,32 @@ function Detail(props){
 
     let [count, setCount] = useState(0);
     let [timeover, setTimeover] = useState(true);
+    let [numbertime, setNumbertime] = useState(true);
+    let [숫자 , 숫자변경] = useState('');
 
     useEffect(()=>{
         let a = setTimeout(()=>{ setTimeover(false) } , 2000 )
         return ()=>{
+            //useEffect 동작전에 여기가 먼저 실행됨 남아있는것들 지우고 시작하기 위해
             clearTimeout(a)
         }
-    })
+    }, [])
+    
+    useEffect(()=>{
+        if (isNaN(숫자)==true) {
+            alert('숫자외에는 쓰지마세요')
+        }
+    } , [숫자])
+
+    // 내가 쓴답 useEffect없이 되었음
+    // let numberOnly = function(e) {
+    //     let numbertime = e.target.value;
+    //     if(isNaN(numbertime) === true) {
+    //         setNumbertime(false);
+    //     } else {
+    //         setNumbertime(true);
+    //     } 
+    // }
     
     let {id} = useParams();
     
@@ -45,6 +64,12 @@ function Detail(props){
             <img src={`https://codingapple1.github.io/shop/shoes${findshoes.id+1}.jpg`} width="100%" />
           </div>
           <div className="col-md-6">
+          <input onChange={(e)=>{숫자변경(e.target.value);
+      }}/>
+      {/* {!numbertime && <Numbertime/>} */}
+      <button onClick={()=>{}}>숫자입력</button>
+      {/* <h4>{numbertime}</h4> */}
+      <h4>{숫자}</h4>
             <h4 className="pt-5">{[findshoes.title]}</h4>
             <p>{[findshoes.content]}</p>
             <p>{[findshoes.price]}원</p>
@@ -69,5 +94,16 @@ function Detail(props){
       </>
     )
 }
+
+// useEffect 없이 쓴 답
+// function Numbertime(){
+//     return (
+//       <>
+//         <div className="alert alert-warning">
+//             숫자외에는 쓰지마세요
+//         </div>
+//       </>
+//     )
+// }
 
   export default Detail;
