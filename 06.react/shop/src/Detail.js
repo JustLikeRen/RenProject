@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 
@@ -13,6 +14,16 @@ let YellowBtn = styled.button`
 `;
 
 function Detail(props){
+
+    let [count, setCount] = useState(0);
+    let [timeover, setTimeover] = useState(true);
+
+    useEffect(()=>{
+        let a = setTimeout(()=>{ setTimeover(false) } , 2000 )
+        return ()=>{
+            clearTimeout(a)
+        }
+    })
     
     let {id} = useParams();
     
@@ -25,6 +36,10 @@ function Detail(props){
     return (
         
       <div className="container">
+
+        {timeover && <Timeover/>}
+        {count}
+        <button onClick={()=>{ setCount(count+1) }}>버튼</button>
         <div className="row">
           <div className="col-md-6">
             <img src={`https://codingapple1.github.io/shop/shoes${findshoes.id+1}.jpg`} width="100%" />
@@ -43,5 +58,16 @@ function Detail(props){
       </div> 
     )
   }
+
+  function Timeover(){
+
+    return (
+      <>
+        <div className="alert alert-warning">
+            2초이내 구매시 할인
+        </div>
+      </>
+    )
+}
 
   export default Detail;
