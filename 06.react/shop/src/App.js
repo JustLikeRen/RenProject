@@ -7,16 +7,15 @@ import { useState } from 'react';
 import data from './data.js';
 import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
 import Detail from './Detail.js';
-
+import axios from 'axios';
 
 function App() {
   // 변수안에는 array형태랑 object형으로 보관가능
   let [shoes, setShoes] = useState(data);
-  let [goods, setGoods] = useState(false);
-  let [titles, setTitles] = useState(0);
+  let [titles] = useState(0);
+  let [click,setClick] = useState(0);
   let navigate = useNavigate();
-  
-  
+  let [로딩중,로딩중변경] = useState(false);
   return (
     <div className="App">
       
@@ -36,20 +35,47 @@ function App() {
             <div className="main-bg"></div>
             {/* 키속성이 없으면 식별하는데 어려움이 생김 map먼저 돌리고 나중에 props를 보냄  */}
             <div className="container">
+              {로딩중 && <p>ㅋㅋ이게안되네</p>}
               <div className="row">
                 {
                   shoes.map(function (a, i) {
                     return (
-                      <Goods key={a.id} titles={i} shoes={shoes} />
+                      <Goods key={a.id} i={i} shoes={shoes[i]} />
                     )
                   })
                 }
-
+                
               </div>
-
             </div>
-          </div>
-        }
+           { click<2 && <button onClick={ ()=>{
+              로딩중변경(true);
+              console.log(로딩중);
+              setClick(click+1);
+              axios.get('https://codingapple1.github.io/shop/data2.json')
+              .then((axiosdata)=>{ 
+                // Array.isArray는 배열인지 확인하는 내장함수 딱히 필요없는거 같아서 변수 바꿈
+                if (click===0) {
+                setShoes(shoes => [...shoes, ...axiosdata.data]);
+              }
+                if (click===1){
+                  axios.get('https://codingapple1.github.io/shop/data3.json')
+                  .then((xxx)=>{
+                    setShoes(shoes => [...shoes, ...xxx.data])
+                  }).catch(()=>{
+                    console.log('실패함')
+                  })
+                }
+              })
+            .catch(()=>{
+              console.log('실패함')
+            }).finally(() => {
+              // finally는 실패하든 성공하든 마지막에 이걸 무조건 실행함
+              로딩중변경(false);
+            })
+          }
+        }>버튼</button> }
+         </div>
+      }
         />
         <Route path="/detail/:id" element={<Detail titles={titles} shoes={shoes} />} />
 
@@ -64,10 +90,7 @@ function App() {
           <Route path="two" element={<p>생일기념 쿠폰받기</p>}/>
         </Route>
       </Routes>
-    {
-      goods == true ? <Goods titles={titles} shoes={shoes}/> : null
-    } 
-
+    
     {/* {
       detail == true ? <Detail titles={titles} shoes={shoes}/> : null
     } */}
@@ -105,17 +128,19 @@ function Goods(props){
   return (
     <>
       <div className="col-md-4">
-        <img src={`https://codingapple1.github.io/shop/shoes${props.titles+1}.jpg`} width="80%" />
+        <img src={`https://codingapple1.github.io/shop/shoes${props.i+1}.jpg`} width="80%" />
         <h4>
-          {props.shoes[props.titles].title}
+          {props.shoes.title}
           </h4>
         <p>
-          {props.shoes[props.titles].price}
+          {props.shoes.price}
         </p>
       </div>
     </>
   )
 }
+
+
 
 
 
