@@ -21,12 +21,20 @@ function Detail(props){
     let [numbertime, setNumbertime] = useState(true);
     let [숫자 , 숫자변경] = useState('');
     let [탭 , 탭변경] = useState(0);
+    let [화면, 화면변경] = useState('');
 
     useEffect(()=>{
         let a = setTimeout(()=>{ setTimeover(false) } , 2000 )
         return ()=>{
             //useEffect 동작전에 여기가 먼저 실행됨 남아있는것들 지우고 시작하기 위해
             clearTimeout(a)
+        }
+    }, [])
+    
+    useEffect(()=>{
+            화면변경('end')
+        return ()=>{    
+            화면변경('')
         }
     }, [])
     
@@ -57,7 +65,7 @@ function Detail(props){
     
     return (
         
-      <div className="container">
+      <div className={`containe start ${화면}`}>
 
         {timeover && <Timeover/>}
         {count}
@@ -104,14 +112,26 @@ function Detail(props){
     )
   }
   function TapContent({탭}){
-    if (탭 === 0) {
-        return <div>내용0</div>
-  } if (탭 === 1) {
-        return <div>내용1</div>
-  } if (탭 === 2) {
-        return <div>내용2</div>
-  }
-  //[<div>내용0</div>,<div>내용1</div>,<div>내용2</div>][탭]
+      let [fade, setFade]= useState('');
+    useEffect(()=>{
+        setTimeout(()=>{
+            setFade('end')}, 10)
+        return (()=>{
+            setFade('');
+        })
+    }, [탭])
+    return (<div className={`start ${fade}`}>
+    {[<div>내용0</div>,<div>내용1</div>,<div>내용2</div>][탭]}
+    </div>)
+
+//     if (탭 === 0) {
+//         return <div>내용0</div>
+//   } if (탭 === 1) {
+//         return <div>내용1</div>
+//   } if (탭 === 2) {
+//         return <div>내용2</div>
+//   }
+  
   }
   
 

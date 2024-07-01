@@ -16,6 +16,8 @@ function App() {
   let [click,setClick] = useState(0);
   let navigate = useNavigate();
   let [로딩중,로딩중변경] = useState(false);
+
+
   return (
     <div className="App">
       
@@ -35,7 +37,7 @@ function App() {
             <div className="main-bg"></div>
             {/* 키속성이 없으면 식별하는데 어려움이 생김 map먼저 돌리고 나중에 props를 보냄  */}
             <div className="container">
-              {로딩중 && <p>ㅋㅋ이게안되네</p>}
+              {로딩중 && <p>ㅋㅋ로딩중</p>}
               <div className="row">
                 {
                   shoes.map(function (a, i) {
