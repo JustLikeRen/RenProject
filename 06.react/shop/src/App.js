@@ -2,26 +2,32 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button,Container,Nav,Navbar } from 'react-bootstrap';
-import { useState } from 'react';
+import { createContext, useState } from 'react';
 // export default 에서는 변수명을 정해줘야함 exprot 는 {a,b,c} 중괄호를 포함해서 꺼내서 써야함 {a},{b}는 변수임
 import data from './data.js';
 import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
-import Detail from './Detail.js';
+import Detail from './routes/Detail.js';
 import axios from 'axios';
+import Cart from './routes/Cart.js';
+
+// 스테이트 보관함
+export let Context1 = createContext();
 
 function App() {
   // 변수안에는 array형태랑 object형으로 보관가능
   let [shoes, setShoes] = useState(data);
   let [titles] = useState(0);
   let [click,setClick] = useState(0);
-  let navigate = useNavigate();
   let [로딩중,로딩중변경] = useState(false);
+  let [재고] = useState([10, 11, 12]);
+  
 
+  let navigate = useNavigate();
 
   return (
     <div className="App">
       
-      <Button variant="primary">Primary</Button>{' '}
+      {/* <Button variant="primary">Primary</Button>{' '} */}
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
           <Nav className="me-auto">
@@ -79,7 +85,11 @@ function App() {
          </div>
       }
         />
-        <Route path="/detail/:id" element={<Detail titles={titles} shoes={shoes} />} />
+        <Route path="/detail/:id" element={
+          <Context1.Provider value={{ titles, shoes, 재고 }}>
+          <Detail titles={titles} shoes={shoes} />
+          </Context1.Provider>
+          } />
 
         <Route path="/about" element={<About/>}>
           <Route path="member" element={<div>멤버임</div>}/>
@@ -91,6 +101,12 @@ function App() {
           <Route path="one" element={<p>첫 주문시 양배추즙 서비스</p>}/>
           <Route path="two" element={<p>생일기념 쿠폰받기</p>}/>
         </Route>
+
+        <Route path="/cart" element={<Cart/>}>
+          <Route path="one" element={<p>첫 주문시 양배추즙 서비스</p>}/>
+          <Route path="two" element={<p>생일기념 쿠폰받기</p>}/>
+        </Route>
+
       </Routes>
     
     {/* {

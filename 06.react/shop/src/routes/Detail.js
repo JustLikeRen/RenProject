@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { Nav } from 'react-bootstrap';
+import { Context1 } from "../App";
 
 // let Box = styled.div`
 //   padding : 20px;
@@ -15,6 +16,8 @@ let YellowBtn = styled.button`
 `;
 
 function Detail(props){
+
+    let {재고, shoes, titles} = useContext(Context1);
 
     let [count, setCount] = useState(0);
     let [timeover, setTimeover] = useState(true);
@@ -66,9 +69,8 @@ function Detail(props){
     return (
         
       <div className={`containe start ${화면}`}>
-
+        {재고[0]}
         {timeover && <Timeover/>}
-        {count}
         <button onClick={()=>{ setCount(count+1) }}>버튼</button>
         <div className="row">
           <div className="col-md-6">
@@ -113,6 +115,7 @@ function Detail(props){
   }
   function TapContent({탭}){
       let [fade, setFade]= useState('');
+      let {재고} = useContext(Context1);
     useEffect(()=>{
         setTimeout(()=>{
             setFade('end')}, 10)
@@ -121,7 +124,7 @@ function Detail(props){
         })
     }, [탭])
     return (<div className={`start ${fade}`}>
-    {[<div>내용0</div>,<div>내용1</div>,<div>내용2</div>][탭]}
+    {[<div>내용0{재고}</div>,<div>내용1</div>,<div>내용2</div>][탭]}
     </div>)
 
 //     if (탭 === 0) {
