@@ -57,7 +57,6 @@ function App() {
             </div>
            { click<2 && <button onClick={ ()=>{
               로딩중변경(true);
-              console.log(로딩중);
               setClick(click+1);
               axios.get('https://codingapple1.github.io/shop/data2.json')
               .then((axiosdata)=>{ 
@@ -143,10 +142,28 @@ function Event(){
 //매개변수로 props(상속이랑같음) Modal안에 상속할거 변수명 정해주고 스테이트를 넣으면 사용가능
 function Goods(props){
 
+    const navigate = useNavigate();                             // 2
+    const goToDetail = () => {                                    // 3
+      navigate(`/detail/${props.i}`);
+    };
+  
   return (
     <>
-      <div className="col-md-4">
-        <img src={`https://codingapple1.github.io/shop/shoes${props.i+1}.jpg`} width="80%" />
+    <style>
+        {`
+          .hover-div:hover {
+          background-color: #f0f0f0; /* 약회색 배경 */
+          }
+        `}
+      </style>
+      <div className="col-md-4 hover-div">
+        <img 
+        src={`https://codingapple1.github.io/shop/shoes${props.i+1}.jpg`} 
+        width="80%" 
+        onClick={goToDetail}
+        style={{ cursor: 'pointer',  }}
+        hover={{}}
+        />
         <h4>
           {props.shoes.title}
           </h4>

@@ -1,8 +1,10 @@
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { Routes, Route,useParams,useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Nav } from 'react-bootstrap';
 import { Context1 } from "../App";
+import { order } from "./../store.js";
 
 // let Box = styled.div`
 //   padding : 20px;
@@ -25,6 +27,10 @@ function Detail(props){
     let [숫자 , 숫자변경] = useState('');
     let [탭 , 탭변경] = useState(0);
     let [화면, 화면변경] = useState('');
+    
+    const navigate = useNavigate();                             // 2
+    const dispatch = useDispatch();
+      
 
     useEffect(()=>{
         let a = setTimeout(()=>{ setTimeover(false) } , 2000 )
@@ -62,14 +68,24 @@ function Detail(props){
     
     // shoes = array 형식이여서 뒤에 find를 붙일수있음 바로 함수넣어서 매개변수 설정
     // 이렇게 나온 findshoes도 array 형식임
-    let findshoes = props.shoes.find(function(x){
+    let findshoes = shoes.find(function(x){
         return x.id == id
       });
+
+      const handleOrder = () => {
+        const newItem = {
+          id: findshoes.id,
+          name: findshoes.title,
+          count: 1  // 예시로 count를 1로 설정하거나, 필요한 경우 다른 속성도 추가할 수 있습니다.
+        };
+        dispatch(order(newItem));
+        navigate('/cart');
+      };
     
     return (
         
       <div className={`containe start ${화면}`}>
-        {재고[0]}
+        {findshoes.id}
         {timeover && <Timeover/>}
         <button onClick={()=>{ setCount(count+1) }}>버튼</button>
         <div className="row">
@@ -86,7 +102,7 @@ function Detail(props){
             <h4 className="pt-5">{[findshoes.title]}</h4>
             <p>{[findshoes.content]}</p>
             <p>{[findshoes.price]}원</p>
-            <button className="btn btn-danger">주문하기</button> 
+            <button className="btn btn-danger" onClick={()=> handleOrder() }>주문하기</button> 
           </div>
         </div>
             <Nav variant="tabs" defaultActiveKey="link0">
