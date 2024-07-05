@@ -26,6 +26,7 @@ function Cart(){
                         <th>상품명</th>
                         <th>수량</th>
                         <th>변경하기</th>
+                        <th>싱품빼기</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -37,7 +38,6 @@ function Cart(){
                                 <td>{i+1}</td>
                                 <td>{id.name}</td>
                                 <td>{id.count}</td>
-                                <td>안녕</td>
                                 <td>
                                     <button style={{marginRight : "10px"}} onClick={()=>{
                                         dispatch(changeMinus(id.id))
@@ -45,6 +45,9 @@ function Cart(){
                                     <button onClick={()=>{
                                         dispatch(changePlus(id.id))
                                     }}>+</button>
+                                </td>
+                                <td>
+                                <button>빼기</button>
                                 </td>
                                 
                                    
