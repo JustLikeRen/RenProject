@@ -23,11 +23,21 @@ let buy = createSlice({
             item.count -= 1;
         }},
         order(state,action){
-            state.push(action.payload);
-        }
+            const item = state.find(item => item.id === action.payload.id);
+            if (item){
+                item.count += 1;
+            } else {
+                state.push(action.payload);
+            }},
+        remove(state,action){
+            // state는 우리가 쓰고있는 배열을 말해
+            // 그리고 .filter는 해당되는 요소들만 배열에 새롭게 추가해주세요 이런뜻인데
+            // !== action.payload 는 삭제하려고 하는애를 제외한 친구들을 새로운 배열에 추가해주세요 라는뜻
+            return state.filter(item => item.id !== action.payload);
+            }
     }})
 
-export let { changePlus, changeMinus, order } = buy.actions
+export let { changePlus, changeMinus, order, remove } = buy.actions
 
 //redux 쓰는이유 컴포넌트간 state공유가 편해짐
 export default configureStore({

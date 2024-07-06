@@ -1,6 +1,6 @@
 import {Table} from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { changePlus,changeMinus } from './../store.js';
+import { changePlus,changeMinus,remove } from './../store.js';
 import { changeName,increase } from './../store/userSlice.js';
 
 function Cart(){
@@ -47,7 +47,9 @@ function Cart(){
                                     }}>+</button>
                                 </td>
                                 <td>
-                                <button>빼기</button>
+                                <button onClick={()=>{
+                                    dispatch(remove(id.id));
+                                }}>빼기</button>
                                 </td>
                                 
                                    

@@ -32,7 +32,7 @@ function App() {
         <Container>
           <Nav className="me-auto">
             <Nav.Link onClick={function(){navigate('/')}}>Home</Nav.Link>
-            <Nav.Link onClick={function(){navigate('/detail')}}>Detail</Nav.Link>
+            <Nav.Link onClick={function(){navigate('/cart')}}>Cart</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
