@@ -1,0 +1,44 @@
+.section {
+    width: 10%;
+    margin: 0 10px;
+}
+
+.header {
+    font-weight: bold;
+    margin-bottom: 10px;
+    background-color: black;
+    color: white;
+    font-size: 22px;
+    padding: 10px;
+}
+
+.currentMonth {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.calendar {
+    display: flex;
+    flex-direction: column;
+}
+
+.scrollable {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.calendarItem {
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.calendarItem:hover {
+    background-color: #e0e0e0;
+}
+
+.selectedDate {
+    background-color: #d3d3d3;
+}
