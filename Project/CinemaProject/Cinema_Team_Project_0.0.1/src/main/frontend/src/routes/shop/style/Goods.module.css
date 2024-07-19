@@ -7,6 +7,13 @@ hr{
 .hrCenter{
     width: 90%;
 }
+.storeHead{
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+.storeName{
+    margin-left: 15px;
+}
 .plusButton{
     margin-left: 58%;
 }
@@ -23,8 +30,19 @@ hr{
     display: flex;
     width: 100%;
 }
+.cardBody:hover{
+    cursor: pointer;
+}
+.cardBody:hover .cardContent{
+    background-color: black;
+    color: white;
+    opacity: 0.2;
+}
 .cardImg{
-    width: 35%;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 150px;
+    height: 150px;
     margin-right: 15px;
 }
 .card-title{
@@ -47,4 +65,10 @@ hr{
     min-width: 453px;
     font-size: 30px;
     text-align: left;
+}
+.packageBox{
+    cursor: pointer;
+}
+.packageBox:hover .packageImg{
+    filter: brightness(0.5) opacity(50%);
 }
