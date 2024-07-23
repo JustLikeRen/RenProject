@@ -20,6 +20,8 @@ import QuestionDetail from './routes/support/QuestionDetail.js';
 import Login from './routes/login/login.js';
 import Page from './routes/login/page.js';
 import Re from './routes/login/register.js';
+import SignUp from './routes/Sign/SignUp.js';
+import SignupForm from './routes/login/register.js';
 
 // 내부 스테이트 들은 알아서 만들고 알아서 정리하세요!
 // 공용스테이트같은 경우에는 redux사용해서 정리할것!
@@ -71,7 +73,7 @@ function App() {
             </Route>
 
             <Route path="/member" element={<> <Outlet></Outlet> </>}>
-              <Route path="signUp" element={<>회원가입</>}></Route>
+              <Route path="signUp" element={<SignupForm/>}></Route>
               <Route path="signIn" element={<Login/>}></Route>
               <Route path="myPage" element={<>마이페이지임</>}></Route>
               {/* 여기 아래부분은 ver2 에서 해도 됨 */}
