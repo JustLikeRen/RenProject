@@ -73,7 +73,7 @@ function App() {
             </Route>
 
             <Route path="/member" element={<> <Outlet></Outlet> </>}>
-              <Route path="signUp" element={<SignupForm/>}></Route>
+              <Route path="signUp" element={<SignUp/>}></Route>
               <Route path="signIn" element={<Login/>}></Route>
               <Route path="myPage" element={<>마이페이지임</>}></Route>
               {/* 여기 아래부분은 ver2 에서 해도 됨 */}
