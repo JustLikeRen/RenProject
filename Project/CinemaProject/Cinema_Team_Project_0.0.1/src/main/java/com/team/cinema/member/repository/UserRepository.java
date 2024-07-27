@@ -8,6 +8,6 @@ import com.team.cinema.member.entity.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
-    List<User> findByUsername(String username);
+    List<User> findByNo(int no);
 }
 

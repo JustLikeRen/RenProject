@@ -27,8 +27,12 @@ public class MemberController {
 	}
 	
 	@PostMapping("/signUp")
-    public ResponseEntity<?> signup(@RequestBody User user) {
-        userService.saveUser(user);
-        return ResponseEntity.ok().body("{\"success\": true}");
-    }
+	public ResponseEntity<String> signUp(@RequestBody User user) {
+	    
+	    // 디버깅을 위해 user 객체의 필드를 확인
+	    System.out.println("Received user: " + user);
+
+	    userService.saveUser(user);
+	    return ResponseEntity.ok("회원가입 성공");
+	}
 }

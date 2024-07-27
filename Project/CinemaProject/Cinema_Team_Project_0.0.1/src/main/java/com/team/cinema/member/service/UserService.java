@@ -9,6 +9,7 @@ import com.team.cinema.member.repository.UserRepository;
 
 @Service
 public class UserService {
+
     @Autowired
     private UserRepository userRepository;
 
@@ -16,7 +17,11 @@ public class UserService {
     private PasswordEncoder passwordEncoder;
 
     public void saveUser(User user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        // 비밀번호 해싱
+        String hashedPassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(hashedPassword);
+
+        // 사용자 저장
         userRepository.save(user);
     }
 }
