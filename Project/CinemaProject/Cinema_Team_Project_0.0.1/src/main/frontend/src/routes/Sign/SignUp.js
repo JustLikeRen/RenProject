@@ -190,13 +190,14 @@ function SignUp() {
                 address: 'why',
             };
             // JSON 형태로 서버에 POST 요청 전송
-            axios.post('/member/signUp',  
-                user)
-                    .then((response) => {console.log(response);})
+            axios.post('/member/signUp', user)
+                    .then((response) => {console.log(response);
+                        if (response.status===200){
+                            navigate('/member/signIn');
+                        }
+                    })
                     .catch((error) => {
-                        console.error(user);
                         console.error('에러 발생:', error);
-                        console.error('에러 응답 데이터:', error.response ? error.response.data : '응답 없음');
                     });
         } else {
             console.error('Validation failed');

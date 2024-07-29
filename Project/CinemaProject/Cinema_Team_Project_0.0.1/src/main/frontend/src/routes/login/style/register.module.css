@@ -139,7 +139,6 @@ select {
     font-size: 15px;
     background: #fff url(https://static.nid.naver.com/images/join/pc/sel_arr_2x.gif) 100% 50% no-repeat;
     background-size: 20px 8px;
-    -webkit-appearance: none;
     display: inline-block;
     text-align: start;
     border: none;
