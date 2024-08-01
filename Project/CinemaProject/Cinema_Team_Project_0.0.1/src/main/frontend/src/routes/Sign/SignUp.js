@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import styles from './style/SignUp.module.css';
 import { useNavigate } from 'react-router-dom';
+import DaumPostcode from 'react-daum-postcode';
 
 function SignUp() {
     const [id, setId] = useState('');
@@ -20,6 +21,7 @@ function SignUp() {
     const [role, setRole] = useState('');
     const [profile, setProfile] = useState('');
     const [addr, setAddr] = useState('');
+    const [uploadImgUrl, setUploadImgUrl] = useState("");
 
     const navigate = useNavigate();
 
@@ -27,6 +29,18 @@ function SignUp() {
         const newErrorClasses = errors.map(error => error ? styles.error : '');
         setErrorClasses(newErrorClasses); 
     }, [errors]);
+
+        
+      
+    const onchangeImageUpload = (e)=> {
+        const {files} = e.target;
+        const uploadFile = files[0];
+        const reader = new FileReader();
+        reader.readAsDataURL(uploadFile);
+        reader.onloadend = ()=> {
+        setUploadImgUrl(reader.result);
+        }
+    };
 
     const checkId = () => {
         if (id === '') {
@@ -185,7 +199,6 @@ function SignUp() {
                 gender,
                 email: emailValue,
                 mobile: phoneValue,
-                role: 'user',
                 profile: '사진',
                 address: 'why',
             };
@@ -264,6 +277,11 @@ function SignUp() {
                                 />
                             </span>
                             <span className={styles.errorNextBox}>{errors[2]}</span>
+                        </div>
+
+                        <div>
+                            <img src={uploadImgUrl} img="img" />
+                            <input type="file" accept="image/*" onChange={onchangeImageUpload} />
                         </div>
 
                         <div>
@@ -423,6 +441,12 @@ function SignUp() {
                             </span>
                             <span className={styles.errorNextBox}>{errors[6]}</span>
                         </div>
+
+                        {/* <DaumPostcode
+                            style={postCodeStyle}
+                            onComplete={onCompletePost}
+                        ></DaumPostcode> */} 
+                        
 
                         <div className={styles.btnArea}>
                             <button type="button" id={styles.btnJoin} onClick={handleSubmit}>
