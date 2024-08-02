@@ -21,7 +21,7 @@ function SignUp() {
     const [role, setRole] = useState('');
     const [profile, setProfile] = useState('');
     const [addr, setAddr] = useState('');
-    const [uploadImgUrl, setUploadImgUrl] = useState("");
+    const [Image, setImage] = useState("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png")
 
     const navigate = useNavigate();
 
@@ -32,15 +32,24 @@ function SignUp() {
 
         
       
-    const onchangeImageUpload = (e)=> {
-        const {files} = e.target;
-        const uploadFile = files[0];
-        const reader = new FileReader();
-        reader.readAsDataURL(uploadFile);
-        reader.onloadend = ()=> {
-        setUploadImgUrl(reader.result);
+    const fileInput = useRef(null)
+ 
+    const onChange = (e) => {
+	if(e.target.files[0]){
+            setFile(e.target.files[0])
+        }else{ //업로드 취소할 시
+            setImage("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png")
+            return
         }
-    };
+	//화면에 프로필 사진 표시
+        const reader = new FileReader();
+        reader.onload = () => {
+            if(reader.readyState === 2){
+                setImage(reader.result)
+            }
+        }
+        reader.readAsDataURL(e.target.files[0])
+    }
 
     const checkId = () => {
         if (id === '') {
@@ -280,8 +289,13 @@ function SignUp() {
                         </div>
 
                         <div>
-                            <img src={uploadImgUrl} img="img" />
-                            <input type="file" accept="image/*" onChange={onchangeImageUpload} />
+                            <input
+                                type='file'
+                                style={{ display: 'none' }}
+                                accept='image/jpg,impge/png,image/jpeg'
+                                name='profile_img'
+                                onChange={onChange}
+                                ref={fileInput} />
                         </div>
 
                         <div>
