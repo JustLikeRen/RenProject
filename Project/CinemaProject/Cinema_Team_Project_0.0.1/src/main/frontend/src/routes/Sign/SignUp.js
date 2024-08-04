@@ -4,6 +4,7 @@ import styles from './style/SignUp.module.css';
 import { useNavigate } from 'react-router-dom';
 import DaumPostcode from 'react-daum-postcode';
 
+
 function SignUp() {
     const [id, setId] = useState('');
     const [pw1, setPw1] = useState('');
