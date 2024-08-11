@@ -374,7 +374,7 @@ function SignUp() {
                             <span className={styles.errorNextBox}>{errors[2]}</span>
                         </div>
 
-                        <div>
+                        {/* <div>
                             <h3 className="join_title">
                                 <label htmlFor="profile">프로필</label>
                             </h3>
@@ -387,7 +387,8 @@ function SignUp() {
                				 onChange={handleFileChange}
                             className={styles.boxProfileCheck}>
                         </input>
-                        <button onClick={uploadFile}>업로드</button>
+                        <button onClick={uploadFile}>업로드</button> */}
+                        
                         <div>
                             <h3 className="join_title">
                                 <label htmlFor="name">이름</label>
