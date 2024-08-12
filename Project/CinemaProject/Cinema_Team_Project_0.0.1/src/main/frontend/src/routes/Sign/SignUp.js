@@ -329,7 +329,7 @@ function SignUp() {
                                     maxLength="20" 
                                     value={id}
                                     onChange={(e) => setId(e.target.value)}
-                                 // onBlur={registerCheck}
+                                    onBlur={checkId}
                                 /><button type="button" id={styles.idCheck} onClick={registerCheck} >
                                 <span>중복 확인</span>
                             </button>
