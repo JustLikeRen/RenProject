@@ -213,32 +213,32 @@ function SignUp() {
         }
     };
 	
-	 const handleFileChange = (event) => {
-        setFile(event.target.files[0]);
-    };
+	//  const handleFileChange = (event) => {
+    //     setFile(event.target.files[0]);
+    // };
 	
-	const uploadFile = async (event) => {
-        event.preventDefault();
-        if (!file) {
-            setError('파일을 선택해 주세요.');
-            return;
-        }
+	// const uploadFile = async (event) => {
+    //     event.preventDefault();
+    //     if (!file) {
+    //         setError('파일을 선택해 주세요.');
+    //         return;
+    //     }
 
-        const formData = new FormData();
-        formData.append('file', file);
-        formData.append('id', "아 실수다 이게 아니지"); 
-        try {
-            await axios.post('member/uploadFile', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                },
-            });
-            alert('파일 업로드 성공');
-        } catch (error) {
-            console.error('파일 업로드 실패', error);
-            setError('파일 업로드에 실패했습니다.');
-        }
-    };
+    //     const formData = new FormData();
+    //     formData.append('file', file);
+    //     formData.append('id', "아 실수다 이게 아니지"); 
+    //     try {
+    //         await axios.post('member/uploadFile', formData, {
+    //             headers: {
+    //                 'Content-Type': 'multipart/form-data',
+    //             },
+    //         });
+    //         alert('파일 업로드 성공');
+    //     } catch (error) {
+    //         console.error('파일 업로드 실패', error);
+    //         setError('파일 업로드에 실패했습니다.');
+    //     }
+    // };
 
     
 
