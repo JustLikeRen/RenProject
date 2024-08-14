@@ -23,14 +23,14 @@ function SignUp() {
     // const [profile, setProfile] = useState('');
 	const [file, setFile] = useState(null);
 	const [error, setError] = useState('');
-
+    const [address, setAddress] = useState('');
+    const [Image, setImage] = useState(null)
     
     useEffect(() => {
         const newErrorClasses = errors.map(error => error ? styles.error : '');
         setErrorClasses(newErrorClasses); 
     }, [errors]);
-    const [address, setAddress] = useState('');
-    const [Image, setImage] = useState(null)
+    
 
     const navigate = useNavigate();
     
