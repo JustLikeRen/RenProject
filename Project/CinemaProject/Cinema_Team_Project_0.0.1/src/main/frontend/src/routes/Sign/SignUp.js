@@ -283,20 +283,20 @@ function SignUp() {
         					}
    					 };
     
-   		const registerCheck = () => {
-    	 axios.post('/member/registerCheck', {"id" : id})
-                    .then((response) => {console.log(response);
-                        if (response.data === 1){
-							alert("ID 사용 가능합니다. 회원가입을 진행합니다.");
-                            navigate('/member/SignUp');
-                        }else{
-							 	alert("이미 존재하는 ID이거나 유효하지 않은 ID입니다. 다른 ID를 선택해주세요.");
-						}
-                    })
-                    .catch((error) => {
-                        console.error('에러 발생:', error);
-                    });
-        					};
+   	const registerCheck = () => {
+    	axios.post('/member/registerCheck', {"id" : id})
+                .then((response) => {console.log(response);
+                    if (response.data === 1){
+						alert("ID 사용 가능합니다. 회원가입을 진행합니다.");
+                        navigate('/member/SignUp');
+                    }else{
+							alert("이미 존재하는 ID이거나 유효하지 않은 ID입니다. 다른 ID를 선택해주세요.");
+					}
+                })
+                .catch((error) => {
+                    console.error('에러 발생:', error);
+                });
+        	};
     
     return (
         <>
