@@ -19,12 +19,7 @@ function SignUp() {
     const [mobile, setMobile] = useState('');
     const [errors, setErrors] = useState(Array(8).fill(''));
     const [errorClasses, setErrorClasses] = useState(Array(8).fill(''));
-    // const [role, setRole] = useState('');
-    // const [profile, setProfile] = useState('');
-	// const [file, setFile] = useState(null);
-	// const [error, setError] = useState('');
     const [address, setAddress] = useState('');
-    // const [Image, setImage] = useState(null)
     
     useEffect(() => {
         const newErrorClasses = errors.map(error => error ? styles.error : '');
