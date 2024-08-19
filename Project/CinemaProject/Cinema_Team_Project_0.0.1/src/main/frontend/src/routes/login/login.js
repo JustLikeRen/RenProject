@@ -17,11 +17,11 @@ function Login() {
                 <div className={styles.headertoptitle}><h1>Red Green Blue</h1></div>
               </div>
               <div className={styles.headertopright}>
-                <div className={styles.topuser} onClick={() => window.location.href = 'https://www.cgv.co.kr/'} style={{ cursor: 'pointer' }}>
+                <div className={styles.topuser} onClick={() => window.location.href = '../signIn'} style={{ cursor: 'pointer' }}>
                   <img className={styles.topuserimg} src={images.login} alt="로그인" />
                   <div className={styles.topuserbtn}>로그인</div>
                 </div>
-                <div className={styles.topuser} onClick={() => window.location.href = 'https://www.cgv.co.kr/'} style={{ cursor: 'pointer' }}>
+                <div className={styles.topuser} onClick={() => window.location.href = '../signUp'} style={{ cursor: 'pointer' }}>
                   <img className={styles.topuserimg} src={images.register} alt="회원가입" />
                   <div className={styles.topuserbtn}>회원가입</div>
                 </div>

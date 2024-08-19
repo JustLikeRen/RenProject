@@ -151,7 +151,7 @@ function SignUp() {
             return null; // 검증 실패 시 종료
         }
     
-        // 나이 확인
+        // 나이 확인 
         const currentYear = new Date().getFullYear();
         if (Number(yy) < 1920) {
             setErrors(prev => { prev[4] = '정말이세요?'; return [...prev]; });
