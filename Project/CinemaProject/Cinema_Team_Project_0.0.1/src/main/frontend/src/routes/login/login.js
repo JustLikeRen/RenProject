@@ -25,7 +25,7 @@ function Login() {
                   <img className={styles.topuserimg} src={images.register} alt="회원가입" />
                   <div className={styles.topuserbtn}>회원가입</div>
                 </div>
-                <div className={styles.topuser} onClick={() => window.location.href = 'https://www.cgv.co.kr/'} style={{ cursor: 'pointer' }}>
+                <div className={styles.topuser} onClick={() => window.location.href = '../myPage'} style={{ cursor: 'pointer' }}>
                   <img className={styles.topuserimg} src={images.mypage} alt="마이페이지" />
                   <div className={styles.topuserbtn}>마이페이지</div>
                 </div>
