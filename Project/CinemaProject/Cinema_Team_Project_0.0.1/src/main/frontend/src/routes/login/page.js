@@ -24,7 +24,7 @@ function Page() {
                       <div className={styles.headerTopTitle}><h1>Red Green Blue</h1></div>
                   </div>
                   <div className={styles.headerTopRight}>
-                      <div className={styles.topUser} onClick={() => window.location.href = 'https://www.cgv.co.kr/'} style={{ cursor: 'pointer' }}>
+                      <div className={styles.topUser} onClick={() => window.location.href = '../login'} style={{ cursor: 'pointer' }}>
                         <img className={styles.topUserImg} src={images.login} alt="로그인" />
                        <div className={styles.topUserBtn}>로그인</div>
                       </div>
