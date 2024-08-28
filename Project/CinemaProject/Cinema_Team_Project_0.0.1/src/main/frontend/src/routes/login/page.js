@@ -24,15 +24,15 @@ function Page() {
                       <div className={styles.headerTopTitle}><h1>Red Green Blue</h1></div>
                   </div>
                   <div className={styles.headerTopRight}>
-                      <div className={styles.topUser} onClick={() => window.location.href = '../login'} style={{ cursor: 'pointer' }}>
+                      <div className={styles.topUser} onClick={() => window.location.href = '../signIn'} style={{ cursor: 'pointer' }}>
                         <img className={styles.topUserImg} src={images.login} alt="로그인" />
                        <div className={styles.topUserBtn}>로그인</div>
                       </div>
-                      <div className={styles.topUser} onClick={() => window.location.href = 'https://www.cgv.co.kr/'} style={{ cursor: 'pointer' }}>
+                      <div className={styles.topUser} onClick={() => window.location.href = '../signUp'} style={{ cursor: 'pointer' }}>
                         <img className={styles.topUserImg} src={images.register} alt="회원가입" />
                         <div className={styles.topUserBtn}>회원가입</div>
                       </div>
-                      <div className={styles.topUser} onClick={() => window.location.href = 'https://www.cgv.co.kr/'} style={{ cursor: 'pointer' }}>
+                      <div className={styles.topUser} onClick={() => window.location.href = '../myPage'} style={{ cursor: 'pointer' }}>
                         <img className={styles.topUserImg} src={images.mypage} alt="마이페이지" />
                         <div className={styles.topUserBtn}>마이페이지</div>
                   </div>
