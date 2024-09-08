@@ -42,7 +42,7 @@ function Page() {
                   <div className={styles.categoryLeft}>
                   <ul className={styles.navbar}>
         <li className={styles.dropdown}>
-            <a href="#" class="dropbtn">영화</a>
+            <a href="#" class="dropbtn">게시판 만들것</a>
             <ul className={styles.dropdownContent}>
                 <li><a href="#">무비차트</a></li>
                 <li><a href="#">아트하우스</a></li>
