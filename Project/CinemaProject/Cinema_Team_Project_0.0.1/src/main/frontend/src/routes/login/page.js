@@ -49,13 +49,7 @@ function Page() {
                 <li><a href="#">ICECON</a></li>
             </ul>
         </li>
-        <li className={styles.dropdown}>
-            <a href="#" class="dropbtn">극장</a>
-            <ul className={styles.dropdownContent}>
-                <li><a href="#">CGV 극장</a></li>
-                <li><a href="#">특별관</a></li>
-            </ul>
-        </li>
+        
         <li className={styles.dropdown}>
             <a href="#" class="dropbtn">예매</a>
             <ul className={styles.dropdownContent}>
