@@ -50,15 +50,7 @@ function Page() {
             </ul>
         </li>
         
-        <li className={styles.dropdown}>
-            <a href="#" class="dropbtn">예매</a>
-            <ul className={styles.dropdownContent}>
-                <li><a href="#">빠른예매</a></li>
-                <li><a href="#">상영스케줄</a></li>
-                <li><a href="#">English Ticketing</a></li>
-                <li><a href="#">English Schedule</a></li>
-            </ul>
-        </li>
+        
         <li className={styles.dropdown}>
             <a href="#" class="dropbtn">스토어</a>
             <ul className={styles.dropdownContent}>
