@@ -52,20 +52,6 @@ function Page() {
         
         
         <li className={styles.dropdown}>
-            <a href="#" class="dropbtn">스토어</a>
-            <ul className={styles.dropdownContent}>
-                <li><a href="#">패키지</a></li>
-                <li><a href="#">영화관람권</a></li>
-                <li><a href="#">기프트카드</a></li>
-                <li><a href="#">콤보</a></li>
-                <li><a href="#">팝콘</a></li>
-                <li><a href="#">음료</a></li>
-                <li><a href="#">스낵</a></li>
-                <li><a href="#">플레이존</a></li>
-                <li><a href="#">씨네샵</a></li>
-            </ul>
-        </li>
-        <li className={styles.dropdown}>
             <a href="#" className="dropbtn">이벤트</a>
             <ul className={styles.dropdownContent}>
                 <li><a href="#">SPECIAL</a></li>
