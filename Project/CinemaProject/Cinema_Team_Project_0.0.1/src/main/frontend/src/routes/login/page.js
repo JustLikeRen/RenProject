@@ -51,18 +51,7 @@ function Page() {
         </li>
         
         
-        <li className={styles.dropdown}>
-            <a href="#" className="dropbtn">이벤트</a>
-            <ul className={styles.dropdownContent}>
-                <li><a href="#">SPECIAL</a></li>
-                <li><a href="#">영화/예매</a></li>
-                <li><a href="#">멤버십/CLUB</a></li>
-                <li><a href="#">CGV 극장별</a></li>
-                <li><a href="#">제휴할인</a></li>
-                <li><a href="#">당첨자 발표</a></li>
-                <li><a href="#">종료된 이벤트</a></li>
-            </ul>
-        </li>
+       
         <li className={styles.dropdown}>
             <a href="#" class="dropbtn">혜택</a>
             <ul className={styles.dropdownContent}>
