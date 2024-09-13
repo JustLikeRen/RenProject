@@ -52,14 +52,7 @@ function Page() {
         
         
        
-        <li className={styles.dropdown}>
-            <a href="#" class="dropbtn">혜택</a>
-            <ul className={styles.dropdownContent}>
-                <li><a href="#">CGV 할인정보</a></li>
-                <li><a href="#">CLUB 서비스</a></li>
-                <li><a href="#">VIP 라운지</a></li>
-            </ul>
-        </li>
+        
     </ul>
                   </div>
                   <div className={styles.categoryRight}>
