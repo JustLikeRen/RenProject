@@ -55,14 +55,7 @@ function Page() {
         
     </ul>
                   </div>
-                  <div className={styles.categoryRight}>
-                    <div className={styles.searchBox}>
-                      <input id={styles.searchBox} type="text" placeholder="영화 검색" />
-                    </div>
-                    <div className={styles.searchBtn}>
-                      <img id={styles.searchBtn} src={images.search} alt="검색" />
-                    </div>
-                  </div>
+                  
                 </div>
               </div>
             </div>  
