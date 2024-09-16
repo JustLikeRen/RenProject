@@ -59,7 +59,6 @@ function Page() {
                 </div>
               </div>
             </div>  
-            <div className={styles.toplist}></div>
                  
           <div className={styles.container}>
             <div className={styles.info}>
