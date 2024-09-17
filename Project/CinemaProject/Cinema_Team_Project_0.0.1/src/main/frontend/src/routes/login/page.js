@@ -62,7 +62,6 @@ function Page() {
                  
           <div className={styles.container}>
             <div className={styles.info}>
-              <div className={styles.infoSpace}></div>
               <div className={styles.infoTop}>
                 <div className={styles.infoTopLeft}>
                   <img className={styles.mypageImg} src={images.mypage} alt="프로피르" />
