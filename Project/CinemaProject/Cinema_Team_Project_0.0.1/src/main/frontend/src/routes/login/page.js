@@ -67,9 +67,7 @@ function Page() {
                   <img className={styles.mypageImg} src={images.mypage} alt="프로피르" />
                 </div>
                 <div className={styles.infoTopRig}>
-                  <div className={styles.infoTopRigTop}>
-                    이름 닉네임 
-                  </div>
+                  
                   <div className={styles.infoTopRigBot}>
                     고객님은 등급 입니다.
                   </div>
