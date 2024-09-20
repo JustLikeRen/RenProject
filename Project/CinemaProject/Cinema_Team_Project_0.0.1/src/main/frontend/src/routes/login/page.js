@@ -68,9 +68,6 @@ function Page() {
                 </div>
                 <div className={styles.infoTopRig}>
                   
-                  <div className={styles.infoTopRigBot}>
-                    고객님은 등급 입니다.
-                  </div>
                 </div>
               </div>
               <div className={styles.infoBot}>
