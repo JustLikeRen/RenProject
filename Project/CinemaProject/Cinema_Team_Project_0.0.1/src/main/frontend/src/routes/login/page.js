@@ -71,9 +71,6 @@ function Page() {
                 </div>
               </div>
               <div className={styles.infoBot}>
-                <div className={styles.infoBotLeft}>
-                  쿠폰 내역
-                </div>
                 <div className={styles.infoBotRig}>
                   예매 내역
                 </div>
