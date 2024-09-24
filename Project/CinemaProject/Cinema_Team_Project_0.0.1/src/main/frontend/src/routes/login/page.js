@@ -85,7 +85,6 @@ function Page() {
                   </li>
                   <li className={styles.li}>관람권/할인쿠폰 관리
                     <ul>
-                      <li>Cinema 영화관람권</li>
                       <li>Cinema 할인쿠폰</li>
                     </ul>
                   </li>
