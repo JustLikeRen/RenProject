@@ -90,7 +90,6 @@ function Page() {
                   </li>
                   <li className={styles.li}>기프트샵
                     <ul>
-                      <li>내 기프트콘</li>
                       <li>결제내역</li>
                     </ul>
                   </li>
