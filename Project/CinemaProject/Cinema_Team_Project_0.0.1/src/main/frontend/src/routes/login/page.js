@@ -80,7 +80,6 @@ function Page() {
                   <li className={styles.li}>
                     나의 예매내역
                     <ul>
-                      <li>신용카드 영수증 출력</li>
                     </ul>
                   </li>
                   <li className={styles.li}>관람권/할인쿠폰 관리
