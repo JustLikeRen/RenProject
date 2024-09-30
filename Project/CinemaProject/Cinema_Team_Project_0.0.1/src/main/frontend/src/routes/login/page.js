@@ -94,7 +94,6 @@ function Page() {
                     <ul>
                       <li>개인정보 변경</li>
                       <li>간편 로그인 설정</li>
-                      <li>회원탈퇴</li>
                     </ul>
                   </li>
                   <li className={styles.li}>프로필 관리
