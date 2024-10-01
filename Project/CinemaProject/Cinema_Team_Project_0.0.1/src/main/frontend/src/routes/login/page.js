@@ -98,7 +98,6 @@ function Page() {
                   </li>
                   <li className={styles.li}>프로필 관리
                     <ul>
-                      <li>나의정보관리</li>
                     </ul>
                   </li>
                   <li className={styles.li}>문의 내역
