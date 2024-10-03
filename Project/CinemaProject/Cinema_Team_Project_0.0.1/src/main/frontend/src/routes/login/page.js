@@ -93,7 +93,6 @@ function Page() {
                   <li className={styles.li}>회원정보
                     <ul>
                       <li>개인정보 변경</li>
-                      <li>간편 로그인 설정</li>
                     </ul>
                   </li>
                   <li className={styles.li}>프로필 관리
