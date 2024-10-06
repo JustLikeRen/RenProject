@@ -46,7 +46,6 @@ function Page() {
             <ul className={styles.dropdownContent}>
                 <li><a href="#">무비차트</a></li>
                 <li><a href="#">아트하우스</a></li>
-                <li><a href="#">ICECON</a></li>
             </ul>
         </li>
         
