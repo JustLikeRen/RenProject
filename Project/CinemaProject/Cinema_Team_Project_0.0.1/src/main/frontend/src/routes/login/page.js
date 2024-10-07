@@ -45,7 +45,6 @@ function Page() {
             <a href="#" class="dropbtn">게시판 만들것</a>
             <ul className={styles.dropdownContent}>
                 <li><a href="#">무비차트</a></li>
-                <li><a href="#">아트하우스</a></li>
             </ul>
         </li>
         
