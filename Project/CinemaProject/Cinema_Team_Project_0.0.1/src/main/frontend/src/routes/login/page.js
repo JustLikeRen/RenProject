@@ -40,7 +40,7 @@ function Page() {
                   <div className={styles.categoryLeft}>
                   <ul className={styles.navbar}>
         <li className={styles.dropdown}>
-            <a href="#" class="dropbtn">게시판 만들것</a>
+            <a href="#" class="dropbtn">만들어</a>
             <ul className={styles.dropdownContent}>
             </ul>
         </li>
