@@ -21,7 +21,6 @@ function Page() {
                 <div className={styles.headerTop}>
                   <div className={styles.headerTopLeft}>
                       <img className={styles.headerTopLogo} src={images.cinema} alt="로고" />
-                      <div className={styles.headerTopTitle}><h1>게시판</h1></div>
                   </div>
                   <div className={styles.headerTopRight}>
                       <div className={styles.topUser} onClick={() => window.location.href = '../signIn'} style={{ cursor: 'pointer' }}>
