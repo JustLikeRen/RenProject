@@ -30,7 +30,6 @@ function Page() {
                         <img className={styles.topUserImg} src={images.register} alt="회원가입" />
                       </div>
                       <div className={styles.topUser} onClick={() => window.location.href = '../myPage'} style={{ cursor: 'pointer' }}>
-                        <img className={styles.topUserImg} src={images.mypage} alt="마이페이지" />
                   </div>
                 </div>
                 </div>
