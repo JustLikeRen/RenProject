@@ -27,7 +27,6 @@ function Page() {
                         <img className={styles.topUserImg} src={images.login} alt="로그인" />
                       </div>
                       <div className={styles.topUser} onClick={() => window.location.href = '../signUp'} style={{ cursor: 'pointer' }}>
-                        <img className={styles.topUserImg} src={images.register} alt="회원가입" />
                       </div>
                       <div className={styles.topUser} onClick={() => window.location.href = '../myPage'} style={{ cursor: 'pointer' }}>
                   </div>
