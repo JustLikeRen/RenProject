@@ -24,7 +24,6 @@ function Page() {
                   </div>
                   <div className={styles.headerTopRight}>
                       <div className={styles.topUser} onClick={() => window.location.href = '../signIn'} style={{ cursor: 'pointer' }}>
-                        <img className={styles.topUserImg} src={images.login} alt="로그인" />
                       </div>
                       <div className={styles.topUser} onClick={() => window.location.href = '../signUp'} style={{ cursor: 'pointer' }}>
                       </div>
